@@ -4,7 +4,7 @@
 <link rel="import" href="../icon-toggle.html">
 
 
-<dom-module id="icon-toggle-demo">
+<dom-module id="icon-toggle-demo" >
   <template>
     <style>
       :host {
@@ -30,10 +30,31 @@
         for(var index =1; index <= parseInt(this.iconCount); index ++){
           var newIcon = document.createElement('icon-toggle');
           newIcon.toggleIcon = this.toggleIcon;
+          newIcon.iconCount = index;
+          /*newIcon.onclick = function(){
+            var icons = document.getElementsByTagName('icon-toggle');
+            for(var i = 1; i < icons.length; i++) {
+              if(i <= index){
+                icons[i].pressed = false;
+              }
+              else{
+                icons[i].pressed = true;
+              }
+            }
+
+          };*/
           Polymer.dom(this.$.container).appendChild(newIcon);
 
         }
       }
     });
+
+    function displayRating(count){
+      /*document.getElementsByTagName('icon-toggle').
+      $().foreach(function(){
+
+      });*/
+      //alert(count);
+    };
   </script>
 </dom-module>

@@ -23,7 +23,7 @@
     </style>
 
 <!--    &lt;!&ndash; local DOM goes here &ndash;&gt;-->
-     <iron-icon icon="[[toggleIcon]]"> </iron-icon>
+     <iron-icon icon="[[toggleIcon]]" > </iron-icon>
   </template>
 
   <script>
@@ -31,6 +31,7 @@
     is: 'icon-toggle',
 	properties: {
       toggleIcon: String,
+      iconCount:String,
 	  pressed: {
         type: Boolean,
         value: false,
@@ -42,7 +43,17 @@
       'tap': 'toggle'
     },
     toggle: function() {
-      this.pressed = !this.pressed;
+      //this.pressed = !this.pressed;
+      var iconList = this.parentElement.childNodes;
+      for(var i = 1; i < iconList.length; i++) {
+        if(i <= parseInt(this.iconCount)){
+          iconList[i].pressed = true;
+        }
+        else{
+          iconList[i].pressed = false;
+        }
+      }
+
     }
 
   });
