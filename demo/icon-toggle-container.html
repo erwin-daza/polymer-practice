@@ -20,7 +20,7 @@
 
         <paper-card heading="[[header]]">
             <div class="card-content">
-                <icon-toggle-demo icon="[[icon]]"></icon-toggle-demo>
+                <icon-toggle-demo toggleIcon="[[icon]]"></icon-toggle-demo>
                 <p>[[level]]</p>
                 <p> <small>[[content]]</small></p>
             </div>
@@ -34,7 +34,8 @@
             properties: {
                 header: String,
                 level: String,
-                content: String
+                content: String,
+                icon: String
             },
             ready: function () {
 
