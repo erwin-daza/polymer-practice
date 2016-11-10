@@ -1,0 +1,51 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../iron-icons/iron-icons.html">
+<link rel="import" href="../../iron-icons/editor-icons.html">
+<link rel="import" href="../icon-toggle.html">
+
+
+<dom-module id="icon-toggle-demo">
+  <template>
+    <style>
+      :host {
+        font-family: sans-serif;
+      };
+    </style>
+  
+    <!--<h3>DURABILITY</h3>
+    
+    <icon-toggle toggle-icon="editor:attach-money"></icon-toggle>
+
+    
+    <h3>Data-bound icon-toggle</h3>-->
+
+   <!-- &lt;!&ndash; use a computed binding to generate the message &ndash;&gt;
+    <div><span>[[message(isFav)]]</span></div>
+
+    &lt;!&ndash; curly brackets ({{}}} allow two-way binding &ndash;&gt;
+    <icon-toggle toggle-icon="favorite" pressed="{{isFav}}"></icon-toggle>-->
+
+  </template>
+  
+  <script>
+    Polymer({
+      is: "icon-toggle-demo",
+      message: function(fav) {
+        if (fav) {
+          return "You really like me!";
+        } else {
+          return "Do you like me?";
+        }
+      },
+      ready: function () {
+
+        var count =3;
+        for(var index =1; index <= count; index ++){
+          var icon = document.createElement('icon-toggle');
+          icon.toggleIcon = "editor:attach-money";
+          document.body.appendChild(icon);
+        }
+      }
+    });
+  </script>
+</dom-module>
