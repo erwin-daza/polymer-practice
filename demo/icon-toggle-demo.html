@@ -22,14 +22,16 @@
     Polymer({
       is: "icon-toggle-demo",
       properties: {
-        toggleIcon: String
+        toggleIcon: String,
+        iconCount: String
       },
       ready: function () {
-        var count =5;
-        for(var index =1; index <= count; index ++){
+        //var count =5;
+        for(var index =1; index <= parseInt(this.iconCount); index ++){
           var newIcon = document.createElement('icon-toggle');
-          newIcon.toggleIcon = "editor:attach-money";
+          newIcon.toggleIcon = this.toggleIcon;
           Polymer.dom(this.$.container).appendChild(newIcon);
+
         }
       }
     });
