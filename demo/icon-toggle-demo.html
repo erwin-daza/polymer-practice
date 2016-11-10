@@ -21,12 +21,15 @@
   <script>
     Polymer({
       is: "icon-toggle-demo",
+      properties: {
+        toggleIcon: String
+      },
       ready: function () {
         var count =3;
         for(var index =1; index <= count; index ++){
-          var icon = document.createElement('icon-toggle');
-          icon.toggleIcon = "editor:attach-money";
-          Polymer.dom(this.$.container).appendChild(icon);
+          var newIcon = document.createElement('icon-toggle');
+          newIcon.toggleIcon = "editor:attach-money";
+          Polymer.dom(this.$.container).appendChild(newIcon);
         }
       }
     });

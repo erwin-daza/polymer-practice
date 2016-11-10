@@ -12,7 +12,7 @@
 
 <link rel="import" href="../../polymer/polymer.html">
 <link rel="import" href="../../paper-card/paper-card.html">
-<link rel="import" href="../icon-toggle-demo.html">
+<link rel="import" href="icon-toggle-demo.html">
 
 
 <dom-module id="icon-toggle-container">
@@ -20,7 +20,7 @@
 
         <paper-card heading="[[header]]">
             <div class="card-content">
-                <icon-toggle-demo iconType="[[iconType]]"></icon-toggle-demo>
+                <icon-toggle-demo icon="[[icon]]"></icon-toggle-demo>
                 <p>[[level]]</p>
                 <p> <small>[[content]]</small></p>
             </div>
@@ -33,7 +33,6 @@
             is: "icon-toggle-container",
             properties: {
                 header: String,
-                iconType: String,
                 level: String,
                 content: String
             },
